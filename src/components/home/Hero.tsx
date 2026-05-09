@@ -57,7 +57,7 @@ export default function Hero() {
             href="/shop"
             className="w-full sm:w-auto px-8 md:px-10 py-3 md:py-4 bg-brand-dark text-white rounded-full text-sm md:text-base font-medium hover:bg-brand-coral hover:shadow-xl hover:shadow-brand-coral/20 transition-all duration-300 text-center tracking-wide"
           >
-            Explore Collection
+            Shop New Arrivals
           </Link>
           <Link
             href="#featured"
