@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 
@@ -19,12 +20,14 @@ export default function ScrollNav() {
 
   return (
     <div className={`${styles.fixedNav} ${isScrolled ? styles.visible : ""}`}>
-      <button className={styles.secondaryBtn}>
-        Login / Create Account
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="7" r="4" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </button>
+      <Link href="/login" style={{ textDecoration: 'none' }}>
+        <button className={styles.secondaryBtn}>
+          Login / Create Account
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="7" r="4" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+      </Link>
     </div>
   );
 }
