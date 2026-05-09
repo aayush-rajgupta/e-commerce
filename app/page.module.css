@@ -76,6 +76,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  animation: rotate 20s linear infinite;
 }
 
 @keyframes rotate {
@@ -270,22 +271,26 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px) scale(0.95);
+    filter: blur(8px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
   }
 }
 
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-40px) scale(0.95);
+    filter: blur(8px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
   }
 }
 
