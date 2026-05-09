@@ -1,3 +1,14 @@
+@import "tailwindcss";
+@source "../src";
+
+@theme {
+  --color-brand-bg: #fcf8f2;
+  --color-brand-dark: #2a3630;
+  --color-brand-coral: #d15c4d;
+  --color-brand-yellow: #d39d33;
+  --color-brand-border: #e2d1c3;
+}
+
 :root {
   --bg-color: #fcf8f2;
   --bg-gradient: radial-gradient(circle at top right, #fff4e6, #fcf8f2 50%, #f1e6da);
