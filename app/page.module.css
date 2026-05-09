@@ -1,0 +1,311 @@
+.main {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.floatingElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.icon {
+  position: absolute;
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite;
+}
+
+.spool { top: 15%; left: 15%; animation-delay: 0s; transform: rotate(-15deg); }
+.flower1 { top: 40%; left: 10%; animation-delay: 1s; }
+.flower2 { top: 10%; left: 70%; animation-delay: 2s; }
+.star1 { top: 12%; left: 85%; animation-delay: 1.5s; }
+.flower3 { top: 45%; right: 10%; animation-delay: 3s; }
+.key { top: 60%; right: 15%; animation-delay: 2.5s; transform: rotate(45deg); }
+.flower4 { top: 75%; left: 12%; animation-delay: 0.5s; }
+.star2 { top: 70%; right: 8%; animation-delay: 2s; }
+.star3 { top: 85%; right: 25%; animation-delay: 0.8s; }
+.flower5 { top: 25%; left: 85%; animation-delay: 3.5s; }
+.leaf1 { top: 80%; left: 30%; animation-delay: 1.2s; transform: rotate(15deg); }
+.sparkle1 { top: 5%; left: 40%; animation-delay: 2.2s; }
+.heart1 { top: 30%; right: 25%; animation-delay: 1.8s; transform: rotate(-10deg); }
+.flower6 { top: 55%; left: 5%; animation-delay: 2.7s; }
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 4rem 2rem;
+  flex-grow: 1;
+}
+
+.logoWrapper {
+  margin-bottom: 3rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+.logoRing {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoSvg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.logoCenter {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.title {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.darkText {
+  color: var(--text-dark);
+  font-family: var(--font-playfair), serif;
+  font-weight: 500;
+}
+
+.coralText {
+  color: var(--text-coral);
+  font-family: var(--font-playfair), serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.yellowText {
+  color: var(--text-yellow);
+  font-family: var(--font-great-vibes), cursive;
+  font-size: 5rem;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.primaryBtn {
+  background-color: var(--text-dark);
+  color: #fff;
+  border: 1px solid var(--text-dark);
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 62, 56, 0.2);
+}
+
+.secondaryBtn {
+  background-color: transparent;
+  color: var(--text-coral);
+  border: 1px solid var(--text-coral);
+}
+
+.secondaryBtn:hover {
+  background-color: rgba(212, 106, 91, 0.05);
+  transform: translateY(-2px);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  animation: fadeInUp 1s ease-out 1s both;
+}
+
+.imageCard {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imageCard:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.imageCard:hover .image {
+  transform: scale(1.05);
+}
+
+.footer {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--bg-color);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.footerContent {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.separator {
+  color: var(--border-color);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 0.5rem;
+  color: var(--text-coral);
+}
+
+.socialIcons svg {
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socialIcons svg:hover {
+  color: var(--text-dark);
+  transform: translateY(-2px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: 3rem;
+  }
+  .yellowText {
+    font-size: 3.5rem;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+  .primaryBtn, .secondaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
