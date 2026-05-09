@@ -1,9 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import ScrollNav from "./ScrollNav";
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <ScrollNav />
       {/* Background Floating Elements */}
       <div className={styles.floatingElements}>
         {/* Thread Spool */}
@@ -123,6 +125,15 @@ export default function Home() {
           </div>
           <div className={styles.imageCard}>
             <Image src="/bouquet.png" alt="Flower Bouquet" fill className={styles.image} />
+          </div>
+          <div className={styles.imageCard}>
+            <Image src="/scarf.png" alt="Hand Dyed Scarf" fill className={styles.image} />
+          </div>
+          <div className={styles.imageCard}>
+            <Image src="/keychain.png" alt="Custom Keychain" fill className={styles.image} />
+          </div>
+          <div className={styles.imageCard}>
+            <Image src="/basket.png" alt="Woven Basket" fill className={styles.image} />
           </div>
         </div>
       </div>

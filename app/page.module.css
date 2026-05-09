@@ -191,6 +191,7 @@
   width: 100%;
   max-width: 1000px;
   animation: fadeInUp 1s ease-out 1s both;
+  margin-bottom: 4rem;
 }
 
 .imageCard {
@@ -296,7 +297,7 @@
     font-size: 3.5rem;
   }
   .gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
   .actions {
@@ -308,4 +309,33 @@
     width: 100%;
     justify-content: center;
   }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fixedNav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1.5rem 2rem;
+  z-index: 100;
+  transform: translateY(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.fixedNav.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fixedNav .secondaryBtn {
+  background-color: var(--bg-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
