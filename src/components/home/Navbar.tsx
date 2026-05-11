@@ -40,41 +40,56 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center w-full">
           
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-brand-dark flex-shrink-0"
-            onClick={() => setIsMobileMenuOpen(true)}
-          >
-            <Menu className="w-6 h-6 sm:w-7 sm:h-7" />
-          </button>
+          {/* Left Area (Menu on Mobile, Logo on Desktop) */}
+          <div className="flex-1 flex justify-start items-center">
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden text-brand-dark"
+              onClick={() => setIsMobileMenuOpen(true)}
+            >
+              <Menu className="w-6 h-6 sm:w-7 sm:h-7" />
+            </button>
+            {/* Brand Logo (Desktop) */}
+            <Link href="/" className="hidden lg:flex items-center gap-2 xl:gap-3 group">
+              <div className="w-10 h-10 xl:w-12 xl:h-12 border border-brand-dark rounded-full flex items-center justify-center group-hover:bg-brand-dark transition-colors duration-300">
+                <span className="font-serif font-bold text-lg xl:text-xl text-brand-dark group-hover:text-white transition-colors duration-300">N</span>
+              </div>
+              <span className="font-serif font-semibold tracking-[0.2em] text-brand-dark text-sm xl:text-lg">
+                NITYAKHUSHI
+              </span>
+            </Link>
+          </div>
 
-          {/* Brand Logo (Left) */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 border border-brand-dark rounded-full flex items-center justify-center group-hover:bg-brand-dark transition-colors duration-300">
-              <span className="font-serif font-bold text-lg sm:text-xl text-brand-dark group-hover:text-white transition-colors duration-300">N</span>
-            </div>
-            <span className="font-serif font-semibold tracking-[0.2em] text-brand-dark hidden sm:block text-sm sm:text-lg">
-              NITYAKHUSHI
-            </span>
-          </Link>
+          {/* Center Area (Logo on Mobile, Links on Desktop) */}
+          <div className="flex-1 flex justify-center items-center">
+            {/* Brand Logo (Mobile) */}
+            <Link href="/" className="flex lg:hidden items-center gap-2 sm:gap-3 group">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 border border-brand-dark rounded-full flex items-center justify-center group-hover:bg-brand-dark transition-colors duration-300">
+                <span className="font-serif font-bold text-lg sm:text-xl text-brand-dark group-hover:text-white transition-colors duration-300">N</span>
+              </div>
+              <span className="font-serif font-semibold tracking-[0.2em] text-brand-dark hidden sm:block text-sm">
+                NITYAKHUSHI
+              </span>
+            </Link>
 
-          {/* Centered Desktop Links (Responsive Spacing) */}
-          <ul className="hidden lg:flex items-center justify-center flex-1 gap-6 xl:gap-12 px-4 xl:px-8">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className="text-[11px] xl:text-sm font-medium text-brand-dark/80 hover:text-brand-coral transition-colors duration-200 relative group tracking-widest uppercase"
-                >
-                  {link.name}
-                  <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-brand-coral transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+            {/* Centered Desktop Links */}
+            <ul className="hidden lg:flex items-center justify-center gap-4 xl:gap-10 w-full">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-[11px] xl:text-sm font-medium text-brand-dark/80 hover:text-brand-coral transition-colors duration-200 relative group tracking-widest uppercase"
+                  >
+                    {link.name}
+                    <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-brand-coral transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          {/* Icons (Right) */}
-          <div className="flex items-center gap-4 sm:gap-8 flex-shrink-0">
+          {/* Right Area (Icons) */}
+          <div className="flex-1 flex justify-end items-center gap-4 sm:gap-8">
             <button className="text-brand-dark hover:text-brand-coral transition-colors duration-200">
               <Search className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
