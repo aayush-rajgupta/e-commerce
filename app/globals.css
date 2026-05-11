@@ -2,19 +2,19 @@
 @source "../src";
 
 @theme {
-  --color-brand-bg: #fcf8f2;
-  --color-brand-dark: #2a3630;
-  --color-brand-coral: #d15c4d;
+  --color-brand-bg: #f9f6f0;
+  --color-brand-dark: #064e3b;
+  --color-brand-coral: #fb7185;
+  --color-brand-sage: #059669;
   --color-brand-yellow: #d39d33;
   --color-brand-border: #e2d1c3;
 }
 
 :root {
-  --bg-color: #fcf8f2;
-  --bg-gradient: radial-gradient(circle at top right, #fff4e6, #fcf8f2 50%, #f1e6da);
-  --text-dark: #2a3630;
-  --text-coral: #d15c4d;
-  --text-yellow: #d39d33;
+  --bg-color: #f9f6f0;
+  --text-dark: #064e3b;
+  --text-coral: #fb7185;
+  --text-sage: #059669;
   --border-color: #e2d1c3;
 }
 
@@ -28,8 +28,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background: var(--bg-gradient);
-  background-attachment: fixed;
+  background-color: var(--bg-color);
   color: var(--text-dark);
   font-family: var(--font-inter), sans-serif;
 }

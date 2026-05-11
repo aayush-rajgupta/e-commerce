@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Great_Vibes } from "next/font/google";
+import { Nunito, Playfair_Display, Great_Vibes } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const nunito = Nunito({ subsets: ["latin"], variable: "--font-inter" }); // keeping variable name to not break existing styles
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 const greatVibes = Great_Vibes({ weight: "400", subsets: ["latin"], variable: "--font-great-vibes" });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} ${greatVibes.variable}`}>
+      <body className={`${nunito.variable} ${playfair.variable} ${greatVibes.variable} bg-[#f9f6f0] text-emerald-900`}>
         {children}
       </body>
     </html>
