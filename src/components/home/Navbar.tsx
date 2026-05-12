@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCartStore } from "../../store/useCartStore";
@@ -11,6 +12,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { openCart, itemCount } = useCartStore();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,14 +22,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const allNavLinks = [
     { name: "Home", href: "/" },
-    { name: "Shop", href: "/shop" },
-    { name: "Collections", href: "#collections" },
-    { name: "Decor", href: "#decor" },
-    { name: "About", href: "#about" },
+    { name: "Categories", href: "/categories" },
     { name: "Contact", href: "#contact" },
   ];
+
+  // Hide the link whose href exactly matches the current page
+  const navLinks = allNavLinks.filter((link) => link.href !== pathname);
 
   return (
     <>
@@ -37,12 +39,11 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 w-screen z-50 flex justify-center pointer-events-none pt-4 sm:pt-6 lg:pt-8 px-4"
       >
-        <div className={`pointer-events-auto flex items-center transition-all duration-500 ease-in-out ${
-          isScrolled
-            ? "bg-white/40 backdrop-blur-md border border-white/30 shadow-sm rounded-full px-6 py-3 lg:px-10"
-            : "bg-white/20 backdrop-blur-sm border border-white/20 shadow-sm rounded-full px-5 py-3 lg:px-8"
-        } w-full max-w-7xl lg:w-max lg:max-w-none justify-between gap-4 lg:gap-16`}>
-          
+        <div className={`pointer-events-auto flex items-center transition-all duration-500 ease-in-out ${isScrolled
+          ? "bg-white/40 backdrop-blur-md border border-white/30 shadow-sm rounded-full px-6 py-3 lg:px-10"
+          : "bg-white/20 backdrop-blur-sm border border-white/20 shadow-sm rounded-full px-5 py-3 lg:px-8"
+          } w-full max-w-7xl lg:w-max lg:max-w-none justify-between gap-4 lg:gap-16`}>
+
           {/* MOBILE LEFT: Menu Button */}
           <div className="flex justify-start lg:hidden">
             <button
@@ -104,7 +105,7 @@ export default function Navbar() {
                 <User className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </Link>
-            <button 
+            <button
               onClick={openCart}
               className="relative flex items-center text-brand-dark hover:text-brand-sage hover:-translate-y-0.5 transition-all duration-300"
             >
@@ -147,7 +148,7 @@ export default function Navbar() {
               >
                 <X className="w-6 h-6" />
               </button>
-              
+
               <ul className="flex flex-col gap-6 overflow-y-auto">
                 {navLinks.map((link) => (
                   <li key={link.name}>
