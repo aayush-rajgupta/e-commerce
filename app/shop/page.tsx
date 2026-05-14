@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "../../src/components/home/Navbar";
-import Footer from "../../src/components/home/Footer";
 import ProductCard, { Product } from "../../src/components/shop/ProductCard";
 import { motion } from "framer-motion";
 import { Filter, ChevronDown } from "lucide-react";
@@ -99,8 +97,7 @@ export default function Shop() {
   });
 
   return (
-    <main className="relative w-full min-h-screen bg-brand-bg selection:bg-brand-coral selection:text-white overflow-x-hidden" style={{ paddingTop: "7rem" }}>
-      <Navbar />
+    <main className="relative w-full min-h-screen bg-brand-bg selection:bg-brand-coral selection:text-white overflow-x-hidden">
       
       {/* Enhanced Fluid Mesh Gradient Background */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
@@ -236,7 +233,6 @@ export default function Shop() {
         </div>
       )}
 
-      <Footer />
     </main>
   );
 }

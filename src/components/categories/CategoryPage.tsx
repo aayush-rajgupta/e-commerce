@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "../home/Navbar";
-import Footer from "../home/Footer";
 
 const categories = [
   {
@@ -77,10 +75,8 @@ const cardVariants: any = {
 export default function CategoryPage() {
   return (
     <div className="min-h-screen bg-brand-bg flex flex-col">
-      <Navbar />
-
       {/* ── Hero ── */}
-      <section className="relative w-full pt-36 pb-20 md:pt-48 md:pb-28 overflow-hidden">
+      <section className="relative w-full pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden">
         {/* soft radial backdrop */}
         <div
           className="pointer-events-none absolute inset-0"
@@ -206,7 +202,6 @@ export default function CategoryPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

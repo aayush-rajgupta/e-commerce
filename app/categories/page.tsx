@@ -3,8 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "../../src/components/home/Navbar";
-import Footer from "../../src/components/home/Footer";
 
 const categories = [
   {
@@ -64,8 +62,7 @@ const cardVariants: any = {
 
 export default function CategoriesPage() {
   return (
-    <main className="relative w-full min-h-screen bg-brand-bg selection:bg-brand-coral selection:text-white overflow-x-hidden" style={{ paddingTop: "7rem" }}>
-      <Navbar />
+    <main className="relative w-full min-h-screen bg-brand-bg selection:bg-brand-coral selection:text-white overflow-x-hidden">
 
       {/* Animated background blobs — same as shop page */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
@@ -175,7 +172,6 @@ export default function CategoriesPage() {
         </motion.div>
       </section>
 
-      <Footer />
     </main>
   );
 }

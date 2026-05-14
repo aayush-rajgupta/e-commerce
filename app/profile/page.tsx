@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "../../src/components/home/Navbar";
-import Footer from "../../src/components/home/Footer";
 import { motion } from "framer-motion";
 import { Package, Heart, User as UserIcon, CheckCircle2, Circle, Truck, PackageOpen } from "lucide-react";
 import ProductCard from "../../src/components/shop/ProductCard";
@@ -42,8 +40,7 @@ export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState("orders");
 
   return (
-    <main className="min-h-screen bg-brand-bg pt-24 pb-20 selection:bg-brand-coral selection:text-white">
-      <Navbar />
+    <main className="min-h-screen bg-brand-bg pb-20 selection:bg-brand-coral selection:text-white">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -173,9 +170,6 @@ export default function ProfilePage() {
         </div>
       </div>
       
-      <div className="mt-24">
-        <Footer />
-      </div>
     </main>
   );
 }
